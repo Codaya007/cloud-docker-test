@@ -1,0 +1,591 @@
+:root {
+  /* --max-width: 1100px; */
+  /* --border-radius: 12px; */
+  /* --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", */
+  /* "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", */
+  /* "Fira Mono", "Droid Sans Mono", "Courier New", monospace; */
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --callout-rgb: 238, 240, 241;
+  --callout-border-rgb: 172, 175, 176;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+  --primary-color: #02447c;
+  --primary-color-text: #73777f;
+  --accent-color: #135f9b;
+  --background-color: #f4f3f7;
+  --danger-color: #dc3545;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+}
+
+.app-header .logo {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  width: 200px;
+}
+
+/* .app-header .logo a {
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+} */
+
+.user-header {
+  display: flex;
+  color: white;
+}
+
+.user-header div h2 {
+  font-size: 1rem;
+}
+
+.user-header div h3 {
+  font-size: 0.75rem;
+}
+
+.user-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.title-form {
+  color: var(--primary-color);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.normal-form {
+  width: 400px;
+  margin: auto;
+  background-color: white;
+  /* border: 1px solid black; */
+  border-radius: 16px;
+  padding: 1rem 2.5rem;
+  box-shadow: 3px 2px 25px gray;
+}
+
+.form-item {
+  padding-bottom: 1.5rem;
+  width: 100%;
+  color: var(--primary-color-text);
+}
+
+.form-item label {
+  display: block;
+  padding-bottom: 0.2rem;
+}
+
+.form-item input,
+.form-item select,
+.form-item textarea {
+  width: 100%;
+  border: 1px solid #c3c6cf;
+  padding-block: 8px;
+  border-radius: 8px;
+  resize: none;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  padding: 0.7rem 0.5rem;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+  margin: auto;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+}
+
+.button-primary:hover {
+  background-color: white;
+  /* border: 1px solid var(--primary-color); */
+  color: var(--primary-color);
+  width: 100%;
+}
+
+.link-primary {
+  color: var(--accent-color);
+  text-align: center;
+  display: block;
+  padding: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.main-container {
+  min-width: 80%;
+  margin: 0 auto;
+  margin-left: 210px;
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 90%; */
+  margin: auto;
+  /* justify-content: flex-start; */
+  justify-content: space-evenly;
+}
+
+.container-dot {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.user-card {
+  width: 200px;
+  color: var(--primary-color);
+}
+
+.user-card,
+.card {
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px gray;
+  color: var(--primary-color);
+  margin: 0.5rem;
+  background-color: white;
+
+  flex-shrink: 0; /** No se encoge si la pantalla se hace más pequeña*/
+}
+
+.user-card div {
+  color: var(--accent-color);
+}
+
+.user-card .title {
+  font-size: 1.3rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 0.3rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  /* padding: 0;
+  margin: 0; */
+}
+
+.main-container .buttons {
+  width: 280px;
+  color: white;
+  margin: 1.5rem 0;
+}
+
+/* .navbar {
+  width: 200px;
+  height: 87vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+} */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 210px;
+  height: 100vh; /* Cambiado a 100vh para que ocupe toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  overflow-y: auto; /* Permitir scroll vertical si es necesario */
+  z-index: 1000; /* Asegura que el navbar esté en la parte superior */
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+.navbar ul li {
+  padding: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.navbar div h3 {
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+.navbar ul li,
+.navbar div h3 {
+  color: var(--primary-color-text);
+}
+
+.navbar button {
+  background-color: white;
+  border: none;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+.app-container {
+  display: flex;
+  height: 100%;
+}
+
+.text-primary {
+  color: var(--primary-color-text);
+}
+
+.mota-form-state {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  color: var(--primary-color);
+  border: 1px solid white;
+  background-color: white;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.mota-form-state button {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  width: 120px;
+}
+
+.normal-form .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  cursor: pointer;
+}
+
+.main-weather-card {
+  color: var(--primary-color-text);
+}
+
+.main-weather-card img {
+  height: 200px;
+  width: 200px;
+}
+
+.params-cards {
+  min-width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.params-cards article {
+  margin: 0;
+  display: flex;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  font-weight: bolder;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.params-cards article p {
+  color: var(--accent-color);
+  font-size: 1.7rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.params-graph-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.params-graph-container h2 {
+  color: var(--primary-color-text);
+  font-size: 1.2rem;
+}
+
+.params-graph-container ul {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+  margin: 0.5rem;
+  padding: 0;
+}
+
+.params-graph-container ul li {
+  list-style-type: none;
+}
+
+.params-graph-container ul li button {
+  color: var(--primary-color-text);
+  text-align: center;
+}
+
+.params-graph-container ul li .active-item {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 3px;
+}
+
+.cards-by-hour {
+  width: calc(100% - 11rem);
+  margin: auto;
+  margin-top: 1rem;
+  display: flex;
+  /* justify-content: space-evenly;
+  flex-wrap: wrap; */
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: 0.3rem;
+}
+
+/** Personalización del scrollbar*/
+.cards-by-hour::-webkit-scrollbar {
+  height: 7px; /* Ancho del scrollbar */
+}
+
+.cards-by-hour::-webkit-scrollbar-track {
+  background-color: var(--background-color); /* Color del fondo del scrollbar */
+}
+
+.cards-by-hour::-webkit-scrollbar-thumb {
+  /* background-color: var(--primary-color-text); */
+  background-color: rgba(115, 119, 127, 0.5);
+  border-radius: 15px; /* Radio de las esquinas del scrollbar */
+}
+
+.cards-by-hour::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(
+    115,
+    119,
+    127,
+    0.7
+  ); /* Color del scrollbar al pasar el cursor sobre él */
+}
+
+.cards-by-hour article {
+  max-width: 150px;
+  max-height: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+
+  flex-shrink: 0; /** No se encoge si la pantalla se hace más pequeña*/
+}
+
+.cards-by-hour article img {
+  width: 100px;
+  height: 100px;
+}
+
+.cards-by-hour article h3 {
+  margin: 0;
+  padding: 0;
+  color: var(--primary-color-text);
+  font-size: 0.9rem;
+}
+
+.vertical-top {
+  margin-top: 1rem;
+}
+
+.history-page {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.history {
+  border-radius: 12px;
+  background-color: white;
+  padding: 1rem;
+  min-width: 500px;
+  margin-bottom: 1rem;
+}
+
+.history h1 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+}
+
+.history .history-by-day h2 {
+  color: var(--primary-color-text);
+  font-size: 1.4rem;
+}
+
+.history-by-day table {
+  width: 100%;
+}
+
+.history-by-day table tbody tr {
+  color: var(--primary-color-text);
+}
+
+.history-by-day img {
+  width: 30px;
+  height: 30px;
+}
+
+.paginator {
+  display: grid;
+  place-items: center;
+}
+.paginator div {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-direction: row;
+}
+.paginator button {
+  padding: 0.313rem 0.625rem;
+  border-radius: 10px;
+}
+
+.align-image {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.align-image img {
+  margin: 0;
+  padding: 0 0.2rem;
+}
+
+.filters-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.round-button {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 20px;
+  border: 1px solid var(--primary-color);
+  margin: 0.25rem;
+}
+
+.round-button:hover {
+  color: var(--primary-color);
+  background-color: white;
+}
+
+.search {
+  width: 21.875rem;
+  height: 25rem;
+  transition: height 0.4s ease;
+}
+
+.card.search.form-hidden {
+  height: 7.8125rem;
+}
+
+.search .buttons button {
+  border-radius: 20px;
+  color: var(--primary-color);
+  background-color: white;
+  border: 1px solid var(--primary-color);
+  margin: 0.25rem;
+}
+
+.search .buttons .active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.search .buttons :hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/** Loader **/
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* centra verticalmente*/
+  margin: 0 auto;
+}
+
+.loader {
+  border: 5px solid var(--background-color);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  animation: spin 0.75s linear infinite;
+}
+
+.loading-text {
+  color: var(--primary-color);
+  /* margin-top: 20px; */
+  font-size: 20px;
+}
+
+.dot1,
+.dot2,
+.dot3 {
+  animation: blink 1.5s infinite;
+  opacity: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+.validation-error {
+  color: var(--danger-color);
+  font-size: 0.7rem;
+  padding: 5px;
+}
+
+.buttons {
+  margin: 0;
+  padding: 0;
+}
